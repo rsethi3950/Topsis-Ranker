@@ -1,0 +1,47 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" media="all" href="{{url_for('static',filename='vendor/font-awesome-4.7/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" type="text/css" media="all" href="{{url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename ='css/styles.css')}}">
+</head>
+
+<body>
+    {%include 'jumbotron.html'%}
+    <h1>Hello there!</h1>
+    <form action="/" method="POST" enctype="multipart/form-data" style="padding-left:5px;">
+        {{form.hidden_tag()}}
+        <div class="form-group">
+            {{form.File.label}}<br>
+            {{form.File}}
+        </div>
+        <br>
+        <div class="form-group">
+            {{form.cols.label}}<br>
+            {{form.cols}}
+        </div>
+        <br>
+        <div class="">
+            {{form.select.label}}
+            <table>
+                {% for subfield in form.select %}
+                <tr>
+                    <td style="width:50%;padding-top: 5px;">{{ subfield.label }}</td>
+                    <div>
+                        <td style="width:50%;">{{ subfield }}</td>
+                    </div>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <button type="submit" class="btn btn-primary">{{form.submit(class_='subm')}}</button>
+
+    </form>
+    {%include 'footer.html'%}
+
+</body>
+
+</html>
