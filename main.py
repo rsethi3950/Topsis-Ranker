@@ -42,9 +42,9 @@ def show_result():
     #     print
     if request.method=="GET":
         return render_template('result.html',form=wform, cols=request.args.get('cols'))
-    return 'Done'
+    else:
+        return redirect(url_for('display'))
 
-    
 
 
 if __name__ == '__main__':
