@@ -16,7 +16,7 @@ intervals==0.9.0
 itsdangerous==1.1.0
 Jinja2==2.11.2
 MarkupSafe==1.1.1
-Pillow==8.0.1
+Pillow==8.1.1
 six==1.15.0
 validators==0.18.1
 visitor==0.1.3
